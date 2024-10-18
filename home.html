@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding:0px;
+            margin: 0px;
+            
+        }
+        
+        #div1{
+            border: 2px solid bisque;
+            background-color: bisque;
+            /* height:2000px; */
+            /* width:100%; */
+            /* background-attachment: fixed; */
+        }
+        #div2{
+            margin-top: 10px;
+            margin-left: 160px;
+            border: 2px solid rgb(244, 112, 11);
+            height: 100px;
+            width:1050px;
+            background-color: rgb(244, 112, 11);
+            border-radius: 10px;
+            
+        }
+        #div3{
+            display:flex;
+            justify-content:space-evenly;
+            margin-left: 80px;
+            margin-top: -40px;
+
+        }
+        .header{
+            background-color: rgb(244, 112, 11);
+            color: white;
+            border-color: rgb(244, 112, 11);
+
+        }
+        .img2{
+            height: 100px;
+            width: 100px;
+            border-radius: 50px;
+        }
+        #para1{
+            font-weight: bold;
+            text-align: center;
+        }
+        #div4{
+            display: flex;
+            justify-content: space-evenly;
+            margin-left: 160px;
+            margin-right: 160px;
+        }
+        .para2{
+            font-size: 14px;
+            font-weight: bold;
+            margin-left: 20px;
+        }
+        #div5{
+            height:400px;
+            width:300px;
+            border:2px solid rgb(206, 166, 92);
+            background-color: rgb(171, 128, 49);
+            border-radius: 20px;
+
+        }
+        #div6{
+            display: flex;
+            justify-content: space-evenly;
+            margin-left: 130px;
+            margin-right: 150px;
+        }
+        .para3{
+            border: 2px solid rgb(244, 112, 11);
+            padding: 10px 10px;
+            width:70px;
+            background-color: rgb(244, 112, 11);
+            border-radius: 10px;
+            margin: 10px;
+
+        }
+        #div7{
+            display: flex;
+            justify-content: center;
+            
+        }
+        ul{
+            list-style-type: none;
+            border:2px solid bisque;
+            display: grid;
+            grid-template-rows: 150px 150px 150px;
+            grid-template-columns: 330px 330px 330px ;
+            margin-left: 180px;
+            row-gap: 20px;
+            column-gap: 20px;
+
+        }
+        li{
+            border:2px solid rgb(171, 128, 49);
+            background-color: rgb(171, 128, 49) ;
+            border-radius: 20px;
+            padding: 15px;
+        }
+        .img3{
+            height: 120px;
+            width: 120px;
+            border-radius: 10px;
+        }
+        .divide{
+            display: flex;
+        }
+        .para4{
+            color: white;
+            /* line-height: 10px; */
+
+            margin:5px 10px;
+            
+        }
+        #div9{
+            margin-top: 30px;
+        
+        }
+        #divide1{
+            grid-row: 1/4;
+            grid-column:3/4;
+        }
+        #chat{
+            position: fixed;
+            bottom:0px;
+            right:30px;
+
+        }
+    
+    </style>
+</head>
+<body>
+    <div id="div1">
+        <div id="chat">
+            <img src="https://embed.tawk.to/_s/v4/assets/images/attention-grabbers/168-r-br.svg" alt="" height="90px" width="120px" style="margin-left: 20px; margin-top: 20px;">
+            <!-- <br> -->
+            <img src="https://cdn-icons-png.flaticon.com/128/579/579801.png" alt="" height="50px" width="50px" style="margin-left: -80px; margin-top: -80px;">
+
+        </div>
+        
+       
+        <div id="div2">
+            <div>
+             <img src="data:image/png;base64,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" alt="" height="50px" width="50px" style="margin-top: 25px; margin-left: 30px; border-radius: 20px;">
+            </div>
+            <div id="div3">
+             <div>
+                <select name="cakes" id="" class="header">
+                    <option value="cakes">Cakes & Pastries</option>
+                    <option value="Exotic Fruitz" name="Exotic Fruitz">Exotic Fruitz</option>
+                    <option value="Mousse & Cheese" name="Mousse & Cheese">Mousse & Cheese</option>
+                    <option value="Premium Cakes" name="Premium Cakes">Premium Cakes</option>
+                    <option value="Regular Cakes" name="Regular Cakes">Regular Cakes</option>
+                    <option value="Something Special" name="Something Special">Something Special</option>
+
+                </select>
+            </div>
+            <div>
+                <p class="header">ThemeCakes</p>
+            </div>
+            <div>
+                <p class="header">PhotoCake</p>
+            </div>
+            <div>
+                <select name="Snacks" id="" class="header">
+                    <option value="Snacks" >Snacks</option>
+                    <option value="Bun" >Bun</option>
+                    <option value="Bread" >Bread</option>
+                    <option value="Burger" >Burger</option>
+                    <option value="Cutlet" >Cutlet</option>
+                    <option value="Cookies" >Cookies</option>
+                    <option value="Croissant" >Croissant</option>
+                    <option value="Samosa" >Samosa</option>
+                    <option value="Puff" >Puff</option>
+                    <option value="Pizza" >Pizza</option>
+                    <option value="Sandwich" >Sandwich</option>
+                </select>
+            </div>
+            <div>
+                <select name="Dessert" id="" class="header">
+                    <option value="Dessert" >Dessert</option>
+                    <option value="Apple Pie" >Apple Pie</option>
+                    <option value="BonBon" >BonBon</option>
+                    <option value="Brotchen Cream Bun" >Brotchen Cream Bun</option>
+                    <option value="Chocolates" >Chocolates</option>
+                    <option value="CupCakes" >CupCakes</option>
+                    <option value="Doughnuts">Doughnuts</option>
+                    <option value="Edair">Edair</option>
+                    <option value="Tea Cakes">Tea Cakes</option>
+                </select>
+            </div>
+            <div>
+                <select name="About Us" id="" class="header">
+                    <option value="About Us">About Us</option>
+                    <option value="Bulk Orders">Bulk Orders</option>
+                    <option value="Terms & Condition">Terms & Condition</option>
+                    <option value="Privacy Policy">Privacy Policy</option>
+                    <option value="Refund Policy">Refund Policy</option>
+                    <option value="Shipping">Shipping & Delivery Policy</option>
+                    <option value="Contact Us">Contact Us</option>
+
+            
+                </select>
+            </div>
+            <div>
+                <p class="header">$0.00  </p>
+            </div>
+            <div>
+                <img src="https://cdn-icons-png.flaticon.com/128/4308/4308487.png" alt="" height="20px" width="30px" class="header" >
+            </div>
+        </div>
+        </div>
+        <br>
+        <p id="para1">Home Delivery  Available 45 Mins to 1 Hour! 8.30 AM – 9.30 PM </p>
+        <br>
+
+        <div id="div4">
+            <div >
+                <img src="./1.webp" alt="" class="img2">
+                <br><br>
+                <p class="para2">Red Velvet</p>
+            </div>
+            <div >
+                <img src="./2.webp" alt="" class="img2">
+                <br><br>
+                <p class="para2">Russian Honey</p>
+            </div>
+            <div >
+                <img src="./3.webp" alt="" class="img2">
+                <br><br>
+                <p class="para2">Six Wonders</p>
+            </div>
+            <div>
+                <img src="./4.webp" alt="" class="img2">
+                <br><br>
+                <p class="para2">Fruit Forest</p>
+            </div>
+            <div >
+                <img src="./5.webp" alt="" class="img2">
+                <br><br>
+                <p class="para2">Pure Chocolate</p>
+            </div>
+            <div class="img2">
+                <img src="./6.webp" alt="" class="img2">
+                <br><br>
+                <p class="para2">Pineapple</p>
+            </div>
+            <div class="img2">
+                <img src="./7.webp" alt="" class="img2">
+                <br><br>
+                <p class="para2">Celebration</p>
+            </div>
+            <div class="img2">
+                <img src="./8.webp" alt="" class="img2">
+                <br><br>
+                <p class="para2">Black Forest</p>
+            </div>
+            <div class="img2">
+                <img src="./9.webp" alt="" class="img2">
+                <br><br>
+                <p class="para2">Rasmali</p>
+            </div>
+        </div>
+        <br><br>
+        <div id="div6">
+            <div>
+                <img src="./page1.jpg" alt="" height="400px" style="border-radius: 20px;">
+            </div>
+            <div id="div5">
+                <img src="./photocake.svg" alt="" height="200px" style="margin-top: 80px; margin-left: 50px;">
+                <br><br>
+                <h2 style="color: white; margin-left: 90px;">PhotoCake</h2>
+                <h4 style="color: white; margin-left: 70px;">Memories On Pastires</h4>
+            </div>
+        </div>
+        <br><br>
+        <h2 style="text-align: center;">What's New ?</h2>
+        <br>
+
+        <div id="div7">
+            <div class="para3">
+               <p >Croissant</p>
+            </div>
+            <div class="para3">
+                <p>Rusk</p>
+            </div>
+            <div class="para3">
+                <p>Single Pcs</p>
+            </div>
+            <div class="para3">
+                <p>Desserts</p>
+            </div>
+        </div>
+        <br><br>
+        <div id="div4">
+            <div >
+                <img src="./11.webp" alt="" class="img2">
+                <br><br>
+                <p class="para2">1st</p>
+            </div>
+            <div >
+                <img src="./12.webp" alt="" class="img2">
+                <br><br>
+                <p class="para2">6 Months</p>
+            </div>
+            <div >
+                <img src="./13.webp" alt="" class="img2">
+                <br><br>
+                <p class="para2">Budget Step</p>
+            </div>
+            <div>
+                <img src="./14.webp" alt="" class="img2">
+                <br><br>
+                <p class="para2">Animal</p>
+            </div>
+            <div >
+                <img src="./15.webp" alt="" class="img2">
+                <br><br>
+                <p class="para2">Aqua</p>
+            </div>
+            <div class="img2">
+                <img src="./16.webp" alt="" class="img2">
+                <br><br>
+                <p class="para2">Baby Shark</p>
+            </div>
+            <div class="img2">
+                <img src="./17.webp" alt="" class="img2">
+                <br><br>
+                <p class="para2">Baby Shower</p>
+            </div>
+            <div class="img2">
+                <img src="./18.webp" alt="" class="img2">
+                <br><br>
+                <p class="para2">Barbie Doll</p>
+            </div>
+            <div class="img2">
+                <img src="./19.webp" alt="" class="img2">
+                <br><br>
+                <p class="para2">Boss Baby</p>
+            </div>
+        </div>
+        <br><br>
+        <ul>
+            <li class="divide">
+                <div>
+                    <img src="./21.webp" alt="" class="img3">
+                </div>
+                <div id="div9">
+                    <h3 class="para4">Exotic Fruits</h3>
+                    <p class="para4" style="font-size: 12px;">"Whimsical 1st Birthday Cake."</p>
+                </div>
+            </li>
+            <li class="divide">
+                <div>
+                    <img src="./24.webp" alt="" class="img3">
+                </div>
+                <div id="div9">
+                    <h3 class="para4">Regular Cakes</h3>
+                    <p class="para4" style="font-size: 12px;">"Delicious Classic Cakes For Everyone."</p>
+                </div>
+            </li>
+            <li class="divide">
+                <div>
+                    <img src="./27.webp" alt="" class="img3">
+                </div>
+                <div id="div9">
+                    <h3 class="para4">Burger</h3>
+                    <p class="para4" style="font-size: 12px;">"Ultimate Burger's, Efficiency Redefined Bliss."</p>
+                </div>
+            </li>
+            <li class="divide">
+                <div>
+                    <img src="./22.webp" alt="" class="img3">
+                </div>
+                <div id="div9">
+                    <h3 class="para4">Mousse & Chesse</h3>
+                    <p class="para4" style="font-size: 12px;">"Whipped Indulgence For Gourmet Palates."</p>
+                </div>
+            </li>
+            <li class="divide">
+                <div>
+                    <img src="./25.webp" alt="" class="img3">
+                </div>
+                <div id="div9">
+                    <h3 class="para4">Something Special</h3>
+                    <p class="para4" style="font-size: 12px;">"unleash Extraordinary Experiences With Innovation."</p>
+                </div>
+            </li>
+            <li class="divide">
+                <div>
+                    <img src="./28.webp" alt="" class="img3">
+                </div>
+                <div id="div9">
+                    <h3 class="para4">Fudge Brownie</h3>
+                    <p class="para4" style="font-size: 12px;">"Satisfy Cravings With Delectable Fudge Brownie"</p>
+                </div>
+            </li>
+            <li class="divide">
+                <div>
+                    <img src="./23.webp" alt="" class="img3">
+                </div>
+                <div id="div9">
+                    <h3 class="para4">Premium Cakes</h3>
+                    <p class="para4" style="font-size: 12px;">"Decadent, Artisanal, Premium Indulgence Awaits."</p>
+                </div>
+            </li>
+            <li class="divide">
+                <div>
+                    <img src="./26.webp" alt="" class="img3">
+                </div>
+                <div id="div9">
+                    <h3 class="para4">Puff</h3>
+                    <p class="para4" style="font-size: 12px;">"Plush Comfort In Every Puff."</p>
+                </div>
+            </li>
+            <li class="divide">
+                <div>
+                    <img src="./29.webp" alt="" class="img3">
+                </div>
+                <div id="div9">
+                    <h3 class="para4">Doughnuts</h3>
+                    <p class="para4" style="font-size: 12px;">"Freshly Baked Artisanal Doughnut Collection."</p>
+                </div>
+            </li>
+        </ul>
+
+        <br><br>
+        <div id="div4">
+            <div >
+                <img src="./31.webp" alt="" class="img2">
+                <br><br>
+                <p class="para2">Budget Barbie</p>
+            </div>
+            <div >
+                <img src="./32.webp" alt="" class="img2">
+                <br><br>
+                <p class="para2">Rainbow</p>
+            </div>
+            <div >
+                <img src="./33.webp" alt="" class="img2">
+                <br><br>
+                <p class="para2">Budget Shape</p>
+            </div>
+            <div>
+                <img src="./34.webp" alt="" class="img2">
+                <br><br>
+                <p class="para2">ButterFly</p>
+            </div>
+            <div >
+                <img src="./35.webp" alt="" class="img2">
+                <br><br>
+                <p class="para2">Cars</p>
+            </div>
+            <div class="img2">
+                <img src="./36.webp" alt="" class="img2">
+                <br><br>
+                <p class="para2">CocoMelon</p>
+            </div>
+            <div class="img2">
+                <img src="./37.webp" alt="" class="img2">
+                <br><br>
+                <p class="para2">Creative</p>
+            </div>
+            <div class="img2">
+                <img src="./38.webp" alt="" class="img2">
+                <br><br>
+                <p class="para2">Space</p>
+            </div>
+            <div class="img2">
+                <img src="./39.webp" alt="" class="img2">
+                <br><br>
+                <p class="para2">Frozen</p>
+            </div>
+        </div>  
+        <br><br>
+        <ul>
+            <li class="divide">
+                <div>
+                    <img src="./41.webp" alt="" class="img3">
+                </div>
+                <div id="div9">
+                    <h3 class="para4">Doughnuts</h3>
+                    <p class="para4" style="font-size: 12px;">"Freshly Baked Artisanal Doughnut Collection."</p>
+                </div>
+            </li>
+            <li class="divide">
+                <div>
+                    <img src="./44.webp" alt="" class="img3">
+                </div>
+                <div id="div9">
+                    <h3 class="para4">Sandwich</h3>
+                    <p class="para4" style="font-size: 12px;">"Satisfy Cravings With Delectable Sandwiches."</p>
+                </div>
+            </li>
+            <li  id="divide1">
+                
+                    <img src="./47.svg" alt="" class="img3" style="width:270px; height:350px; margin-top: 50px; margin-left: 20px;">
+            
+                    <h1 class="para4" style="margin-left: 100px; margin-top: -80px;">Snacks</h1>
+                    <p class="para4" style="font-size: 15px; margin-left: 40px;">"Delicious treats for every craving."</p>
+
+            </li>
+            <li class="divide">
+                <div>
+                    <img src="./42.webp" alt="" class="img3">
+                </div>
+                <div id="div9">
+                    <h3 class="para4">Cookies</h3>
+                    <p class="para4" style="font-size: 12px;">"Decadent Bliss In Every Bite."</p>
+                </div>
+            </li>
+            <li class="divide">
+                <div>
+                    <img src="./45.webp" alt="" class="img3">
+                </div>
+                <div id="div9">
+                    <h3 class="para4">Mini Pizza</h3>
+                    <p class="para4" style="font-size: 12px;">"Delicious, Hot, Gourmet pixxa Perfection."</p>
+                </div>
+            </li>
+            <li class="divide">
+                <div>
+                    <img src="./43.webp" alt="" class="img3">
+                </div>
+                <div id="div9">
+                    <h3 class="para4">Chocolates</h3>
+                    <p class="para4" style="font-size: 12px;">"Satisfy Cravings With Delectable Sandwiches."</p>
+                </div>
+            </li>
+            <li class="divide">
+                <div>
+                    <img src="./46.webp" alt="" class="img3">
+                </div>
+                <div id="div9">
+                    <h3 class="para4">Dream Cake</h3>
+                    <p class="para4" style="font-size: 12px;">"Satisy Cravings With Delectable Dream Cake."</p>
+                </div>
+            </li>
+            
+        </ul>
+        <br><br><br>
+
+        <p style="text-align: center; ">Copyright © 2024 All Rights Reserved Powered by Amma's pastries</p>
+
+        
+    </div>
+    
+</body>
+</html>
